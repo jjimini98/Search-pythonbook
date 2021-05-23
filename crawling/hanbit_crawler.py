@@ -6,7 +6,6 @@ bs = BeautifulSoup(html, 'html.parser')
 #타이틀 부분 코드는 아무 사이트나 넣어도 돌아감! 이 코드는 재사용이 가능하겠다. 
 title = bs.select("#container > div.store_view_wrap > div.store_view_wrap_l > div.store_view_area > div.store_product_info_box > h3")
 
-
 context = bs.select("#tabs_1")
 print(context)
 
