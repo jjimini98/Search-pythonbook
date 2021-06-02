@@ -24,17 +24,18 @@
 
 #### Requirements
 
-* python >= 3.6.9
+* python >= 3.5.2
 
-* flask >= 1.1.1, <= 1.1.2
+* flask >= 2.0.1
 
+* django >=3.2.4 
 #### How to install
 
 ```sh
 
 git clone ...........
 
-cd da_design_server_학번
+cd DataArchitecture
 
 pip3 install -r requirements.txt
 
@@ -56,7 +57,7 @@ TODO
 
 ### Contacts
 
-나의이메일
+jjimini98@naver.com
 
 ---
 
