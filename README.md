@@ -29,15 +29,31 @@
 * flask >= 2.0.1
 
 * django >=3.2.4 
+
 #### How to install
+
+* Clone & Install
 
 ```sh
 
-git clone ...........
+~$ git clone ...........
 
-cd DataArchitecture
+~$ cd DataArchitecture
 
-pip3 install -r requirements.txt
+~/DataArchitecture$pip3 install -r requirements.txt
+
+```
+* Append two lines below to '~/.bashrc' files.
+
+```sh
+
+~$ cat >> ~/.bashrc
+export DATAARCHITECTURE=/root/DataArchitecture
+export PYTHONPATH=$PYTHONPATH:$DATAARCHITECTURE
+
+Ctrl+d
+
+~$ source ~/.bashrc
 
 ```
 
