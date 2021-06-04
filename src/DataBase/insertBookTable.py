@@ -1,3 +1,4 @@
+from os import X_OK
 import pymysql 
 
 ip = '118.67.131.97'
@@ -35,7 +36,6 @@ def get_title_contents(data):
          elif Flag == 0 and x != title: 
             contents = x 
             contents = contents.rstrip()
-            
 
             res.append([title, contents])
    return res
@@ -48,11 +48,6 @@ sql = '''INSERT INTO Book(title, intro) values (%s, %s) '''
 for data in datalist:
    for x in get_title_contents(data):
       cursor.execute(sql, (x[0],x[1]))
-
-conn.commit()
-
-
-cursor.execute(sql)
 
 
 conn.commit()
