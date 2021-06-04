@@ -4,14 +4,14 @@ ip = '118.67.131.97'
 port = 3306
 user = 'root'
 pw = 'jimin980908'
-db_name = 'test'
+db_name = 'pyinder'
 
 conn = pymysql.connect(host = ip, port = port , user = user , password= pw , db = db_name)
 cursor = conn.cursor()
 
 
-# datalist = ["위키북스 책소개.txt", "이지스퍼블리싱 책소개.txt", "한빛미디어 책소개.txt"]
-data = "test.txt"
+datalist = ["위키북스 책소개.txt", "이지스퍼블리싱 책소개.txt", "한빛미디어 책소개.txt"]
+
 
 def get_title_contents(data):
    res  = list()
@@ -45,7 +45,15 @@ def get_title_contents(data):
 sql = '''INSERT INTO Book(title, intro) values (%s, %s) '''
 
 
-for x in get_title_contents(data):
-   cursor.execute(sql, (x[0],x[1]))
+for data in datalist:
+   for x in get_title_contents(data):
+      cursor.execute(sql, (x[0],x[1]))
 
 conn.commit()
+
+
+cursor.execute(sql)
+
+
+conn.commit()
+conn.close()
