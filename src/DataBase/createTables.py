@@ -4,7 +4,7 @@ ip = '118.67.131.97'
 port = 3306
 user = 'root'
 pw = 'jimin980908'
-db_name = 'test'
+db_name = 'pyinder'
 
 
 conn = pymysql.connect(host = ip, port = port , user = user , password= pw , db = db_name)
@@ -14,7 +14,7 @@ cursor = conn.cursor()
 sql1 ='''CREATE TABLE Book ( 
    id INT NOT NULL AUTO_INCREMENT ,
    title VARCHAR(255) NOT NULL,
-   picture BINARY,
+   picture LONGBLOB,
    intro VARCHAR(1000) NOT NULL, 
    Tag_id INT NOT NULL,
    PRIMARY KEY (id) ) '''
