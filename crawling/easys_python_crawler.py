@@ -1,4 +1,4 @@
-from urllib.request import urlopen
+rom urllib.request import urlopen
 from bs4 import BeautifulSoup
 
 

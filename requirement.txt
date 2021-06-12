@@ -1,0 +1,6 @@
+
+python >=3.5.2
+django >=3.2.4
+flask >=2.0.1
+mongoDB >=3.6.23
+Sphinx >= 1.6.7
