@@ -1,13 +1,35 @@
 from flask import Flask , request , render_template, url_for, redirect
+import pymysql
 app = Flask (__name__)
- 
+
+ip = '118.67.131.97'
+port = 3306
+user = 'root'
+pw = 'jimin980908'
+db_name = 'pyinder'
+
+
+
 @app.route('/',methods=['GET'])
 def main():
-   return render_template("home.html")
+    return render_template("home.html")
+
 
 @app.route('/search', methods=['POST'])
 def search():
-   value = request.form['context'] # value는 값이 다음 페이지(search)로 넘어가게 됨
+    value = request.form['context']  # value는 값이 다음 페이지(search)로 넘어가게 됨
+    conn = pymysql.connect(host=ip, port=port, user=user, password=pw, db=db_name)
+
+    try:
+        db = conn
+        c = conn.cursor()
+        c.execute("select EXISTS (select * from Book where intro={}) as success;".format(value))
+        db.commit()
+    except Exception as e:
+        print('db error:', e)
+    finally: db.close()
+
+
 
 
 
