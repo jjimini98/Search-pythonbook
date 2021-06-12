@@ -1,10 +1,37 @@
-<!DOCTYPE html>
-<html lang="en">
+<!-- update -->
+<!doctype html>
+<html lang="ko">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="Generator" content="EditPlus®">
+    <meta name="Author" content="">
+    <meta name="Keywords" content="">
+    <meta name="Description" content="">
+    <title>SQLite3 게시판 등록</title>
+    <style type="text/css">
+        body{ text-align: center; }
+    </style>
 </head>
 <body>
-
+    <h3>게시판</h3>
+    <h4>수정</h4>
+    <form action = "/update/{{index}}" method = "POST">
+        이름<br> <input type = "text" name = "name" /><br>
+        내용<br> <input type = "text" name = "context" style="text-align:center; width:400px; height:100px;"/><br><br>
+        <input type = "submit" value = "수 정" /><br>
+    </form>
+        <h4>기존</h4>
+        <table border=1 width="600" align="center">
+            <thead>
+                <td>목차</td>
+                <td>이름</td>
+                <td>내용</td>
+            </thead>
+            <tr> <td>{{ index}}</td>
+                <td>{{ rows[index-1][0] }}</td>
+                <td>{{ rows[index-1][1] }}</td>
+            </tr>
+        </table>
 </body>
 </html>
+
