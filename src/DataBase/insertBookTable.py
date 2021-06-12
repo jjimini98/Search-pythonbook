@@ -11,7 +11,7 @@ conn = pymysql.connect(host = ip, port = port , user = user , password= pw , db 
 cursor = conn.cursor()
 
 
-datalist = ["위키북스 책소개.txt", "이지스퍼블리싱 책소개.txt", "한빛미디어 책소개.txt"]
+datalist = ["한빛미디어 책소개.txt"]
 
 
 def get_title_contents(data):
@@ -52,3 +52,5 @@ for data in datalist:
 
 conn.commit()
 conn.close()
+
+
