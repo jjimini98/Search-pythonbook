@@ -27,8 +27,8 @@
 * python >= 3.5.2
 
 * flask >= 2.0.1
-
-* django >=3.2.4 
+* mysql  Ver 15.1 Distrib 10.0.38-MariaDB, for debian-linux-gnu (x86_64) using readline 5.2
+ 
 
 #### How to install
 
@@ -67,6 +67,11 @@ Ctrl+d
 ```
 
 - chrome, firefox 웹브라우저에서 ip주소와 5000번 포트번호를 입력하면 Pyinder에 접속이 가능 
+* pip install로 모듈을 모두 설치했음에도 모듈이 import 되지 않는다면, 아래와 같이 실행해본다. 
+```shell
+apt-get install python-flask
+apt-get install python-pymysql 
+``` 
 
 
 ---
