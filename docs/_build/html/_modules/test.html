@@ -1,0 +1,166 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>test &mdash; DataArchitecture  documentation</title>
+    
+    <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/translations.js"></script>
+    <link rel="top" title="DataArchitecture  documentation" href="../index.html" />
+    <link rel="up" title="모듈 코드" href="index.html" />
+   
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body role="document">  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <h1>Source code for test</h1><div class="highlight"><pre>
+<span class="kn">import</span> <span class="nn">sys</span>
+<span class="kn">import</span> <span class="nn">pdb</span>
+
+
+<div class="viewcode-block" id="test_logger"><a class="viewcode-back" href="../test.html#test.test_logger">[문서]</a><span class="k">def</span> <span class="nf">test_logger</span><span class="p">():</span>
+	<span class="sd">&quot;&quot;&quot; Test logger.</span>
+
+<span class="sd">	:return: test result.</span>
+<span class="sd">	:rtype : bool</span>
+<span class="sd">	&quot;&quot;&quot;</span>
+
+	<span class="kn">from</span> <span class="nn">src</span> <span class="kn">import</span> <span class="n">mylogger</span>
+	
+	<span class="k">try</span><span class="p">:</span>
+		<span class="n">m</span><span class="o">=</span><span class="n">mylogger</span><span class="o">.</span><span class="n">get_logger</span><span class="p">(</span><span class="s1">&#39;test&#39;</span><span class="p">,</span><span class="s1">&#39;/root/DataArchitecture/log&#39;</span><span class="p">)</span>
+		<span class="n">m</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s1">&#39;hi, debug&#39;</span><span class="p">)</span>
+
+	<span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+		<span class="k">print</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
+		<span class="k">return</span> <span class="bp">False</span>
+	<span class="k">return</span> <span class="bp">True</span></div>
+
+<div class="viewcode-block" id="test_config"><a class="viewcode-back" href="../test.html#test.test_config">[문서]</a><span class="k">def</span> <span class="nf">test_config</span><span class="p">():</span>
+	<span class="sd">&quot;&quot;&quot; Test Config.</span>
+
+<span class="sd">	:return : test result.</span>
+<span class="sd">	:rtype : bool</span>
+<span class="sd">	&quot;&quot;&quot;</span>
+
+	<span class="kn">from</span> <span class="nn">src</span> <span class="kn">import</span> <span class="n">myconfig</span>
+	<span class="k">try</span><span class="p">:</span>
+		<span class="n">m</span><span class="o">=</span> <span class="n">myconfig</span><span class="o">.</span><span class="n">get_config</span><span class="p">(</span><span class="s1">&#39;root/DataArchitecture/share/test.config&#39;</span><span class="p">)</span>
+		<span class="k">print</span><span class="p">(</span><span class="s1">&#39;key1 =&#39;</span><span class="p">,</span> <span class="n">m</span><span class="p">[</span><span class="s1">&#39;general&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;key1&#39;</span><span class="p">))</span>
+		<span class="k">print</span><span class="p">(</span><span class="s1">&#39;key2 =&#39;</span><span class="p">,</span> <span class="n">m</span><span class="p">[</span><span class="s1">&#39;general&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;key2&#39;</span><span class="p">))</span>
+		<span class="k">print</span><span class="p">(</span><span class="s1">&#39;key3 =&#39;</span><span class="p">,</span> <span class="n">m</span><span class="p">[</span><span class="s1">&#39;logger&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;key3&#39;</span><span class="p">))</span>
+
+	<span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+		<span class="k">print</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
+		<span class="k">return</span> <span class="bp">False</span>
+	
+	<span class="k">return</span> <span class="bp">True</span></div>
+
+
+<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+	<span class="n">target_step</span> <span class="o">=</span> <span class="p">[]</span>
+	<span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">)</span> <span class="o">&gt;=</span><span class="mi">2</span><span class="p">:</span>
+		<span class="n">target_step</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;,&quot;</span><span class="p">)</span>
+	<span class="k">print</span><span class="p">(</span><span class="s2">&quot;Test steps = &quot;</span><span class="p">,</span> <span class="n">target_step</span><span class="p">)</span> 
+
+	
+	<span class="k">if</span> <span class="ow">not</span> <span class="n">target_step</span> <span class="ow">or</span> <span class="s1">&#39;logger&#39;</span> <span class="ow">in</span> <span class="n">target_step</span><span class="p">:</span>
+		<span class="n">ret</span> <span class="o">=</span> <span class="n">test_logger</span><span class="p">()</span>
+		<span class="k">if</span> <span class="ow">not</span> <span class="n">ret</span><span class="p">:</span>
+			<span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s1">&#39;Error when test_logger&#39;</span><span class="p">)</span>
+		<span class="k">print</span><span class="p">(</span><span class="s2">&quot;Success - test_logger&quot;</span><span class="p">)</span>
+
+	<span class="k">if</span> <span class="ow">not</span> <span class="n">target_step</span> <span class="ow">or</span> <span class="s1">&#39;config&#39;</span> <span class="ow">in</span> <span class="n">target_step</span><span class="p">:</span>
+		<span class="n">ret</span> <span class="o">=</span> <span class="n">test_config</span><span class="p">()</span>
+		<span class="k">if</span> <span class="ow">not</span> <span class="n">ret</span><span class="p">:</span>
+			<span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s1">&#39;Error when test_config&#39;</span><span class="p">)</span>
+		<span class="k">print</span><span class="p">(</span><span class="s2">&quot;Success - test_config&quot;</span><span class="p">)</span>
+	<span class="k">print</span><span class="p">(</span><span class="s2">&quot;Test Compeleted&quot;</span><span class="p">)</span> 
+
+
+
+	 
+
+
+
+
+
+
+
+<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+	<span class="n">ret</span> <span class="o">=</span> <span class="n">test_logger</span><span class="p">()</span>
+	<span class="k">if</span> <span class="ow">not</span> <span class="n">ret</span><span class="p">:</span>
+		<span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s1">&#39;Error when test_logger&#39;</span><span class="p">)</span>
+	<span class="k">print</span><span class="p">(</span><span class="s2">&quot;Success - test_logger&quot;</span><span class="p">)</span>
+
+</pre></div>
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper"><div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+  <li><a href="index.html">모듈 코드</a><ul>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>빠른 검색</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="바로 가기" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    모듈, 클래스 또는 함수 이름을 입력하십시오.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2021, Author.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.3.6</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.7</a>
+      
+    </div>
+
+    
+
+    
+  </body>
+</html>
