@@ -23,7 +23,7 @@ def index(): # 리스트(board)를 html 파일로 넘기기
  return render_template('home.html', rows = lis)
 
 @app.route('/search', methods = ['POST'])
-def add():
+def search():
     if request.method == 'POST':
         question = request.form['input']
         lis.append(question)
@@ -45,39 +45,5 @@ def add():
 
 
 if __name__ == '__main__':
-    app.run()
-
-
-
-
-
-
-# @app.route('/',methods=['GET'])
-# def main():
-#
-#     return render_template("home.html", data= "")
-#
-#
-# @app.route('/search', methods=['POST'])
-# def search():
-#     result = []
-#     value = request.form['input'] # value는 값이 다음 페이지(search)로 넘어가게
-#
-#     sql = '''SELECT intro FROM Book'''
-#     cursor.execute(sql)
-#     answer = cursor.fetchall()
-#
-#     for x in answer:
-#         for t in x:
-#             if value in t:
-#                 result.append(t)
-#     return  render_template('search.html')
-
-
-
-
-
-if __name__ == "__main__":
-      app.run()
-
+    app.run(host='0.0.0.0')
 
