@@ -61,7 +61,13 @@ Ctrl+d
 
 ### How to use
 
-TODO
+``` shell
+~$ cd DataArchitecture/src/Server
+~/DataArchitecture/src/Server$ python route.py 
+```
+
+- chrome, firefox 웹브라우저에서 ip주소와 5000번 포트번호를 입력하면 Pyinder에 접속이 가능 
+
 
 ---
 
